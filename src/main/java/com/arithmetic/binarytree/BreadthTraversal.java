@@ -16,7 +16,7 @@ public class BreadthTraversal {
 
     private static void breadthTraversal(TreeNode root) {
         LinkedList<TreeNode> queue = new LinkedList<>();
-        TreeNode current = null;
+        TreeNode current;
         queue.offer(root);
         while (!queue.isEmpty()) {
             current = queue.peek();
