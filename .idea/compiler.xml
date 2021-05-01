@@ -9,5 +9,6 @@
         <module name="arithmetic-leetcode" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="8" />
   </component>
 </project>
