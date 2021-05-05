@@ -1,23 +1,17 @@
 package com.arithmetic;
 
-import java.util.Comparator;
 import java.util.PriorityQueue;
 
 /**
  * @author 19045752
  * @create 2020/7/21
- * @description
+ * @description 使用大顶堆和小顶堆来实现寻找中位数
  */
 public class GetMedianOfStream {
 
     static int count = 0;
 
-    static PriorityQueue<Integer> maxHeap = new PriorityQueue<>(new Comparator<Integer>() {
-        @Override
-        public int compare(Integer o1, Integer o2) {
-            return o2.compareTo(o1);
-        }
-    });
+    static PriorityQueue<Integer> maxHeap = new PriorityQueue<>((o1, o2) -> o2.compareTo(o1));
     static PriorityQueue<Integer> minHeap = new PriorityQueue<>();
 
     private void output(Integer num) {
