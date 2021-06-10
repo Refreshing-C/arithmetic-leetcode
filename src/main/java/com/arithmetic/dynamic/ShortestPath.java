@@ -1,11 +1,10 @@
-package com.arithmetic;
+package com.arithmetic.dynamic;
 
 /**
  * @author 19045752
  * @create 2020/7/17
  * @description
  */
-@SuppressWarnings("checkstyle:HideUtilityClassConstructor")
 public class ShortestPath {
 
     public static void main(String[] args) {

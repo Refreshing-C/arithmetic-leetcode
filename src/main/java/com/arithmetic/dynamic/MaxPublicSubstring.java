@@ -1,4 +1,4 @@
-package com.arithmetic;
+package com.arithmetic.dynamic;
 
 /**
  * @author 19045752
@@ -48,7 +48,7 @@ public class MaxPublicSubstring {
      * 状态转移方程 如果当前公共字串为123，且a字符串和b字符串在123后面的字符串相同，则把该字符串加入公共子串
      * 定目标 寻找最大的公共字串
      * 寻找终止条件 决策到了不相等的结果
-     * <p>
+     *
      * 使用二维数组来表示a字符串和b字符串，a和b相等的位置均可以作为起点，从起点开始寻找最远距离
      */
 
@@ -56,22 +56,22 @@ public class MaxPublicSubstring {
 
         char[] c1 = a.toCharArray();
         char[] c2 = b.toCharArray();
-        int[][] m = new int[a.length() + 1][b.length() + 1];
+        int[][] dp = new int[a.length() + 1][b.length() + 1];
 
         for (int i = 1; i <= c1.length; i++) {
             for (int j = 1; j <= c2.length; j++) {
                 if (c1[i - 1] == c2[j - 1]) {
-                    m[i][j] = m[i - 1][j - 1] + 1;
+                    dp[i][j] = dp[i - 1][j - 1] + 1;
                 }
             }
         }
 
         int maxLen = 0;
         int index = 0;
-        for (int i = 0; i < m.length; i++) {
-            for (int j = 0; j < m[0].length; j++) {
-                if (m[i][j] > maxLen) {
-                    maxLen = m[i][j];
+        for (int i = 0; i < dp.length; i++) {
+            for (int j = 0; j < dp[0].length; j++) {
+                if (dp[i][j] > maxLen) {
+                    maxLen = dp[i][j];
                     index = i;
                 }
             }

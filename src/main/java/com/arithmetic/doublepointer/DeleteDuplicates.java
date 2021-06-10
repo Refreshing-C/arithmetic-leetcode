@@ -23,4 +23,52 @@ public class DeleteDuplicates {
         slow.next = null;
         return head;
     }
+
+    /**
+     * todo
+     * @param head [1,2,3,3,4,4,5]
+     * @return
+     */
+    public static ListNode deleteDuplicatesAll(ListNode head) {
+        ListNode pre = new ListNode(-1);
+        pre.next = head;
+
+        ListNode curr = pre;
+        while (curr.next != null && curr.next.next != null) {
+            if (curr.val != curr.next.val && curr.next.val != curr.next.next.val) {
+                pre.next = curr.next;
+                pre = pre.next;
+            }
+            curr = curr.next;
+        }
+        return head;
+    }
+
+    static class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode(int val) {
+            this.val = val;
+        }
+    }
+
+    public static void main(String[] args) {
+        ListNode head = new ListNode(1);
+        ListNode a = new ListNode(2);
+        ListNode b = new ListNode(3);
+        ListNode c = new ListNode(3);
+        ListNode d = new ListNode(4);
+        ListNode e = new ListNode(4);
+        ListNode f = new ListNode(5);
+
+        head.next = a;
+        a.next = b;
+        b.next = c;
+        c.next = d;
+        d.next  = e;
+        e.next = f;
+
+        deleteDuplicatesAll(head);
+    }
 }
