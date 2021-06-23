@@ -1,0 +1,52 @@
+package com.nowcoder.javabase;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class MyJDBC {
+	
+//	driverclass: com.mysql.jdbc.Driver 
+//	connection URL: jdbc:mysql://127.0.0.1:3306/test 
+//	username:root 
+//	password:000000
+	public static void main(String[] args) {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		//假设Student类已存在
+		Student student = new Student();
+		student.setName("tiger");
+		student.setAge(21);
+		student.setBirthday("2018-04-08");
+		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/test", "root", "000000");
+			String sql = "insert into student(name, age, birthday) values(?,?,?)";
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, student.getName());
+			ps.setInt(2, student.getAge());
+			ps.setString(3, student.getBirthday());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			if(ps!=null) {
+				try {
+					ps.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+			if(conn!=null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		
+	}
+
+}
