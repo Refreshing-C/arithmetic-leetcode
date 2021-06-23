@@ -22,6 +22,8 @@ public class ReverseStr {
             } else if (tmp.length() != 0) {
                 stack.push(tmp.toString());
                 tmp.delete(0, tmp.length());
+            } else {
+                continue;
             }
         }
 
@@ -29,12 +31,12 @@ public class ReverseStr {
             stack.push(tmp.toString());
         }
 
-        StringBuilder result = new StringBuilder();
+        String result = "";
         while (!stack.empty()) {
-            result.append(stack.pop()).append(" ");
+            result += stack.pop() + " ";
 
         }
 
-        return result.toString().trim();
+        return result.trim();
     }
 }

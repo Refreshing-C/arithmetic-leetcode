@@ -1,8 +1,8 @@
 package com.arithmetic.binarysearchtree;
 
 /**
- * author: 19045752
- * create: 2021/4/28
+ * author: destiny
+ * date: 2021/4/28
  * description:
  */
 public class TreeNode {
