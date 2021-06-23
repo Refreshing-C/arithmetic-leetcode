@@ -1,7 +1,9 @@
 package com.arithmetic.listnode;
 
 /**
- * Definition for singly-linked list.
+ * author: 19045752
+ * create: 2021/4/27
+ * description: 单链表结构
  */
 public class ListNode {
     int val;

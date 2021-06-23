@@ -8,7 +8,7 @@ package com.arithmetic.dynamic;
 public class MaxPublicSubstring {
     public static void main(String[] args) {
         String a = "12345243991933";
-        String b = "134569";
+        String b = "13456";
 
 //        getMaxPublicSubstring(a, b);
         getMaxPublicSubString2(a, b);
@@ -46,20 +46,22 @@ public class MaxPublicSubstring {
      * 找状态 当前寻找到的相匹配的字符
      * 做决策 当前找到的字符是否相等
      * 状态转移方程 如果当前公共字串为123，且a字符串和b字符串在123后面的字符串相同，则把该字符串加入公共子串
+     * dp[i][j]表示以a[i]和b[j]结尾的公共字串的长度
      * 定目标 寻找最大的公共字串
      * 寻找终止条件 决策到了不相等的结果
-     *
      * 使用二维数组来表示a字符串和b字符串，a和b相等的位置均可以作为起点，从起点开始寻找最远距离
      */
 
     private static void getMaxPublicSubString2(String a, String b) {
+        int m = a.length();
+        int n = b.length();
 
         char[] c1 = a.toCharArray();
         char[] c2 = b.toCharArray();
-        int[][] dp = new int[a.length() + 1][b.length() + 1];
+        int[][] dp = new int[m + 1][n + 1];
 
-        for (int i = 1; i <= c1.length; i++) {
-            for (int j = 1; j <= c2.length; j++) {
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
                 if (c1[i - 1] == c2[j - 1]) {
                     dp[i][j] = dp[i - 1][j - 1] + 1;
                 }
@@ -79,5 +81,6 @@ public class MaxPublicSubstring {
 
         String maxSubstr = a.substring(index - maxLen, index);
         System.out.println(a + " and " + b + " maxSubString is " + maxSubstr);
+
     }
 }

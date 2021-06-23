@@ -18,11 +18,11 @@ public class MaxCount {
     private static String getMaxCount(String[] arr) {
 
         Map<String, Integer> keyValue = new HashMap<>(arr.length);
-        for (int i = 0; i < arr.length; i++) {
-            if (keyValue.containsKey(arr[i])) {
-                keyValue.put(arr[i], keyValue.get(arr[i]) + 1);
+        for (String s : arr) {
+            if (keyValue.containsKey(s)) {
+                keyValue.put(s, keyValue.get(s) + 1);
             } else {
-                keyValue.put(arr[i], 1);
+                keyValue.put(s, 1);
             }
         }
 
