@@ -23,7 +23,7 @@ public final class JosephRing {
         }
 
         int k = 2;
-        int element = 0;
+        int element;
         int i = 0;
         for (; i < k; i++) {
             element = killRing.poll();

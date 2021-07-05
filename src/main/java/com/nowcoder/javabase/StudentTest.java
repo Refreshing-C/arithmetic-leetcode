@@ -1,9 +1,10 @@
 package com.nowcoder.javabase;
 
+import com.alibaba.fastjson.JSONObject;
+
 /**
  * 思路：将原有字符串转换为json字符串，使用fastjson的json字符串转对象的方法完成
  */
-import com.alibaba.fastjson.JSONObject;
 
 public class StudentTest {
 
