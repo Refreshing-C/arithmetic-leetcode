@@ -12,14 +12,12 @@ public class PalinDromeNumber {
 			if(String.valueOf(i).equals(new StringBuffer(i+"").reverse().toString())) {
 				char[] ch = String.valueOf(i).toCharArray();
 				int sum = 0;
-				for(int j = 0; j < ch.length; j++) {
-					sum += ch[j] - '0';
+				for (char c : ch) {
+					sum += c - '0';
 				}
 				if(sum == 30) {
 					System.out.println(i);
 				}
-			}else {
-				continue;
 			}
 		}
 	}
