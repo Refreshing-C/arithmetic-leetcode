@@ -1,6 +1,5 @@
 package com.arithmetic;
 
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeSet;
@@ -12,10 +11,10 @@ import java.util.TreeSet;
  *          如果有多个这样的座位，安排他到索引最小的那个座位。
  */
 public class ExamRoom {
-    private Map<Integer, int[]> startMap;
-    private Map<Integer, int[]> endMap;
-    private TreeSet<int[]> treeSet;
-    private int n;
+    Map<Integer, int[]> startMap;
+    Map<Integer, int[]> endMap;
+    TreeSet<int[]> treeSet;
+    int n;
 
     public ExamRoom(int n) {
         this.n = n;
