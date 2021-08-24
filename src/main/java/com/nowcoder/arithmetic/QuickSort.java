@@ -2,7 +2,7 @@ package com.nowcoder.arithmetic;
 
 /**
  * author: Administrator
- * create: 2021/6/20 0020
+ * create: 2021/6/20
  * description:
  */
 public class QuickSort {

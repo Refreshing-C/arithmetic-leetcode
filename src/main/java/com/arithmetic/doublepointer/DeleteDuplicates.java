@@ -1,9 +1,11 @@
 package com.arithmetic.doublepointer;
 
+import java.util.List;
+
 /**
  * author: Administrator
  * create: 2021/5/16 0016
- * description: 删除链表中的重复元素
+ * description: 删除排序链表中的重复元素，使每个元素只出现一次
  * method: 使用快慢指针 当快指针值不等于慢指针值时，将慢指针的下一个元素改为快指针值，
  */
 public class DeleteDuplicates {
@@ -25,23 +27,26 @@ public class DeleteDuplicates {
     }
 
     /**
-     * todo
      * @param head [1,2,3,3,4,4,5]
      * @return
      */
     public static ListNode deleteDuplicatesAll(ListNode head) {
-        ListNode pre = new ListNode(-1);
-        pre.next = head;
+        ListNode dummy = new ListNode(-1);
+        dummy.next = head;
 
-        ListNode curr = pre;
+        ListNode curr = dummy;
         while (curr.next != null && curr.next.next != null) {
-            if (curr.val != curr.next.val && curr.next.val != curr.next.next.val) {
-                pre.next = curr.next;
-                pre = pre.next;
+            if (curr.next.val == curr.next.next.val) {
+                int x = curr.next.val;
+                while (curr.next != null && curr.next.val == x) {
+                    curr.next = curr.next.next;
+                }
+            } else {
+                curr = curr.next;
             }
-            curr = curr.next;
         }
-        return head;
+        return dummy.next;
+
     }
 
     static class ListNode {
@@ -66,7 +71,7 @@ public class DeleteDuplicates {
         a.next = b;
         b.next = c;
         c.next = d;
-        d.next  = e;
+        d.next = e;
         e.next = f;
 
         deleteDuplicatesAll(head);

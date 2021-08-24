@@ -7,37 +7,34 @@ package com.arithmetic.listnode;
  */
 public class ReverseListNodeN {
 
-    private ListNode reverseN(ListNode head, int n) {
-        int index = 1;
+    // 1 2 3 4 5
+    public static ListNode reverseN(ListNode head, int n) {
+        if (head == null) {
+            return null;
+        }
         ListNode prev = null;
+        ListNode successor = null;
         ListNode curr = head;
+        int count = 0;
         while (curr != null) {
-            if (index == n) {
-                prev = curr.next;
+            count++;
+            if (count <= n) {
+                ListNode next = curr.next;
+                successor = next;
+                curr.next = prev;
+                prev = curr;
+                curr = next;
+            } else {
                 break;
             }
-            curr = curr.next;
-            index++;
         }
-
-        index = 1;
-        curr = head;
-        while (curr != null) {
-            ListNode next = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = next;
-            if (index == n) {
-                break;
-            }
-            index++;
-        }
+        head.next = successor;
         return prev;
     }
 
-    ListNode successor = null;
+    static ListNode successor = null;
 
-    private ListNode reverseN2(ListNode head, int n) {
+    public static ListNode reverseN2(ListNode head, int n) {
         if (n == 1) {
             successor = head.next;
             return head;

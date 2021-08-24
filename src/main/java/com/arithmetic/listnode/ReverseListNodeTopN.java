@@ -4,11 +4,11 @@ package com.arithmetic.listnode;
  * 反转链表前N个节点
  */
 public class ReverseListNodeTopN {
-    ListNode reverseN(ListNode head, int n) {
+    public static ListNode reverseN(ListNode head, int n) {
         ListNode successor = null;
         ListNode prev = null;
         ListNode curr = head;
-        int index = 1;
+        int index = 0;
         while(curr != null) {
             index++;
             if(index >= n) {

@@ -28,7 +28,7 @@ public class Trap {
                 left++;
             } else {
                 res += rightMax - height[right];
-                right++;
+                right--;
             }
         }
         return res;

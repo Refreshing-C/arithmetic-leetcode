@@ -6,9 +6,9 @@ import java.util.Map;
 /**
  * @author 19045752
  * @create 2020/7/20
- * @description
+ * @description 找出数组中出现次数最多的元素
  */
-public class MaxCount {
+public class MaxCountNum {
     public static void main(String[] args) {
         String[] arr = new String[]{"1", "3", "4", "1", "5", "2", "6", "4", "2", "7", "9", "1", "7", "0"};
         String key = getMaxCount(arr);
@@ -18,11 +18,11 @@ public class MaxCount {
     private static String getMaxCount(String[] arr) {
 
         Map<String, Integer> keyValue = new HashMap<>(arr.length);
-        for (int i = 0; i < arr.length; i++) {
-            if (keyValue.containsKey(arr[i])) {
-                keyValue.put(arr[i], keyValue.get(arr[i]) + 1);
+        for (String s : arr) {
+            if (keyValue.containsKey(s)) {
+                keyValue.put(s, keyValue.get(s) + 1);
             } else {
-                keyValue.put(arr[i], 1);
+                keyValue.put(s, 1);
             }
         }
 

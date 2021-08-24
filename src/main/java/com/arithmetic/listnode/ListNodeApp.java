@@ -23,6 +23,7 @@ public class ListNodeApp {
 
         ListNode head = null;
 
+        head = ReverseListNodeN.reverseN2(a, 0);
 //        ListNode head = reverseBetween(a, 1, 1);
 
         while (head != null) {
@@ -30,7 +31,7 @@ public class ListNodeApp {
             head = head.next;
         }
 
-        printListNodeReverse(a);
+//        printListNodeReverse(a);
     }
 
     /**

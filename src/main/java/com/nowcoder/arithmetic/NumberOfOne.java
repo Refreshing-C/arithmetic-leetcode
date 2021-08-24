@@ -2,7 +2,7 @@ package com.nowcoder.arithmetic;
 
 import java.util.Scanner;
 
-public class Test11 {
+public class NumberOfOne {
 
     public static void main(String[] args) {
 

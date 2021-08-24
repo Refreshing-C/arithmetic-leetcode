@@ -19,7 +19,7 @@ public class BreadthTraversal {
         TreeNode current;
         queue.offer(root);
         while (!queue.isEmpty()) {
-            current = queue.peek();
+            current = queue.poll();
             System.out.println(current.val);
             if (current.left != null) {
                 queue.offer(current.left);

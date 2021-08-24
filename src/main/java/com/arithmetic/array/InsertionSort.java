@@ -1,4 +1,4 @@
-package com.nowcoder.arithmetic;
+package com.arithmetic.array;
 
 public class InsertionSort {
 

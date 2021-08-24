@@ -5,13 +5,12 @@ package com.nowcoder.arithmetic;
  *
  * @author Destiny
  */
-public class Test28 {
+public class MoreThanHalfNumSolution {
 
     public static void main(String[] args) {
-
     }
 
-    public int MoreThanHalfNum_Solution(int[] array) {
+    public int MoreThanHalfNumSolution(int[] array) {
         int temp = array[0];
         int count = 1;
         for (int i = 1; i < array.length; i++) {

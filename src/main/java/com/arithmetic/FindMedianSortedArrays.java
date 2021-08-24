@@ -10,11 +10,11 @@ public class FindMedianSortedArrays {
 
     public static void main(String[] args) {
 
-        /*int[] nums1 = new int[]{1, 2};
-        int[] nums2 = new int[]{3, 4};
+        int[] nums1 = new int[]{1, 2, 6};
+        int[] nums2 = new int[]{3, 4, 5, 9};
 
         double medianSortedArrays = findMedianSortedArrays(nums1, nums2);
-        System.out.println(medianSortedArrays);*/
+        System.out.println(medianSortedArrays);
         
     }
 
@@ -37,15 +37,15 @@ public class FindMedianSortedArrays {
         int b = 0;
         while (i < arr.length) {
 
-            while (b < nums1.length && i < arr.length && nums2[a] >= nums1[b]) {
-                arr[i] = nums1[b];
-                i++;
-                b++;
-            }
-            while (a < nums2.length && i < arr.length && nums2[a] < nums1[b]) {
-                arr[i] = nums2[a];
+            while (a < nums1.length && i < arr.length && nums2[b] >= nums1[a]) {
+                arr[i] = nums1[a];
                 i++;
                 a++;
+            }
+            while (b < nums2.length && i < arr.length && nums2[b] < nums1[a]) {
+                arr[i] = nums2[b];
+                i++;
+                b++;
             }
         }
         return arr[arr.length - 1];
