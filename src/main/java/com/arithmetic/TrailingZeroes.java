@@ -1,4 +1,4 @@
-package com.arithmetic.binarysearchtree;
+package com.arithmetic;
 
 /**
  * author: 19045752

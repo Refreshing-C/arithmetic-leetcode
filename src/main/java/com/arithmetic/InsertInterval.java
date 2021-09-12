@@ -11,7 +11,7 @@ import java.util.List;
  * method: 找出和新区间不相交的区间，直接放入结果中，将相交的合并为一个大区间，
  * 什么时候应该放入新区间呢？当合并后的区间的右端点比当前区间的左端点小时，将合并后区间放入结果中。
  */
-public class Insert {
+public class InsertInterval {
 
     public int[][] insert(int[][] intervals, int[] newInterval) {
         int left = newInterval[0];

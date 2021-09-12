@@ -13,7 +13,7 @@ import java.util.List;
  * method: 将所有的区间按照start排序，取第一个区间的start和end作为标杆[left,right]，依次遍历剩下的区间，
  *      对left和right进行更新，如果遇到不在left和right范围内的区间，将left和right加入结果，新区间作为left和right继续遍历。
  */
-public class merge {
+public class MergeIntervals {
     public int[][] merge(int[][] intervals) {
         Arrays.sort(intervals, Comparator.comparingInt(a -> a[0]));
         if (intervals.length == 0) {

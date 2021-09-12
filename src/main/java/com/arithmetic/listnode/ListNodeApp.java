@@ -23,13 +23,17 @@ public class ListNodeApp {
 
         ListNode head = null;
 
-        head = ReverseListNodeN.reverseN2(a, 0);
+        ReorderList.reorderList(a);
+
+        printListNodeReverse(a);
+
+        /*head = ReverseListNodeN.reverseN2(a, 0);
 //        ListNode head = reverseBetween(a, 1, 1);
 
         while (head != null) {
             System.out.println(head.val);
             head = head.next;
-        }
+        }*/
 
 //        printListNodeReverse(a);
     }

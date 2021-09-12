@@ -42,6 +42,7 @@ public class RandomizedSet {
         int index = indexMap.get(val);
         // 交换待删除元素和最后一个元素
         dataList.set(index, lastElement);
+        dataList.set(dataList.size() - 1, val);
         // 更新索引
         indexMap.put(lastElement, index);
         dataList.remove(dataList.size() - 1);

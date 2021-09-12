@@ -1,4 +1,4 @@
-package com;
+package com.arithmetic;
 
 import java.util.HashMap;
 import java.util.LinkedHashSet;
@@ -6,7 +6,7 @@ import java.util.LinkedHashSet;
 /**
  * author: Administrator
  * create: 2021-07-13 22:22
- * description: 运用你所掌握的数据结构，设计和实现一个  LFU (最不经常使用) 缓存机制
+ * description: 运用你所掌握的数据结构，设计和实现一个  LFU (最近最不经常使用) 缓存机制
  * method: 需要使用一个HashMap存储key value 一个HashMap存储key frequency,
  *      一个LinkedHashSet存储相同frequency的key，一个变量保存当前最小的frequency
  */

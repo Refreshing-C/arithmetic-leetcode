@@ -32,21 +32,23 @@ public class longestPalindromicSubstr {
 
         String maxStr = "";
 
-        for (int i = 0; i < len; i++) {
-            for (int j = 0; j + i < len; j++) {
-                int k = i + j;
-                if (i == 0) {
-                    dp[j][k] = true;
+        for (int k = 0; k < len; k++) {
+            for (int i = 0; i < len - k; i++) {
+                int j = i + k;
+                if (k == 0) {
+                    dp[i][j] = true;
                 } else {
-                    if (i == 1) {
-                        dp[j][k] = (s.charAt(j) == s.charAt(k));
+                    boolean b = s.charAt(i) == s.charAt(j);
+                    if (k == 1) {
+                        dp[i][j] = b;
                     } else {
-                        dp[j][k] = (s.charAt(j) == s.charAt(k)) && dp[j + 1][k - 1];
+                        dp[i][j] = b && dp[i + 1][j - 1];
                     }
+
                 }
 
-                if (dp[j][k] && i + 1 > maxStr.length()) {
-                    maxStr = s.substring(j, j + i + 1);
+                if (dp[i][j] && i + 1 > maxStr.length()) {
+                    maxStr = s.substring(i, i + k + 1);
                 }
             }
         }
