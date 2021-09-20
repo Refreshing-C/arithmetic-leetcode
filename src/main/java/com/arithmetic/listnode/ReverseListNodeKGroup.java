@@ -1,5 +1,7 @@
 package com.arithmetic.listnode;
 
+import java.util.List;
+
 /**
  * author: 19045752
  * create: 2021/4/27
@@ -11,8 +13,8 @@ public class ReverseListNodeKGroup {
         if (head == null) {
             return null;
         }
-        ListNode a, b;
-        a = b = head;
+        ListNode a =head;
+        ListNode b = head;
         // 不够K个原样输出
         for (int i = 1; i <= k; i++) {
             if (b == null) {

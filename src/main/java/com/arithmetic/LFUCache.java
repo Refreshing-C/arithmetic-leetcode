@@ -23,6 +23,7 @@ public class LFUCache {
         freqToKeys = new HashMap<>();
         this.capacity = capacity;
         minFreq = 0;
+        String s = "";
     }
 
     public int get(int key) {
