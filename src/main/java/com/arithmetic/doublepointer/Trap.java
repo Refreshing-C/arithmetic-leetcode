@@ -19,7 +19,7 @@ public class Trap {
         int leftMax = 0;
         int rightMax = 0;
 
-        while (left <= right) {
+        while (left < right) {
             leftMax = Math.max(leftMax, height[left]);
             rightMax = Math.max(rightMax, height[right]);
 
