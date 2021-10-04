@@ -1,7 +1,11 @@
 package com.arithmetic.binarytree;
 
 
+import com.arithmetic.listnode.ListNode;
+
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  * author: 19045752
@@ -11,19 +15,26 @@ import java.util.LinkedList;
  */
 public class BinaryTreeBreadthTraversal {
 
-    public void breadthTraversal(TreeNode root) {
+    public List<List<Integer>> breadthTraversal(TreeNode root) {
+        List<List<Integer>> res = new ArrayList<>();
+
         LinkedList<TreeNode> queue = new LinkedList<>();
-        TreeNode current;
         queue.offer(root);
         while (!queue.isEmpty()) {
-            current = queue.poll();
-            System.out.println(current.val);
-            if (current.left != null) {
-                queue.offer(current.left);
+            List<Integer> list = new ArrayList<>();
+            for (int i = 1; i < queue.size(); i++) {
+                TreeNode current = queue.poll();
+                list.add(current.val);
+
+                if (current.left != null) {
+                    queue.offer(current.left);
+                }
+                if (current.right != null) {
+                    queue.offer(current.right);
+                }
             }
-            if (current.right != null) {
-                queue.offer(current.right);
-            }
+            res.add(list);
         }
+        return res;
     }
 }

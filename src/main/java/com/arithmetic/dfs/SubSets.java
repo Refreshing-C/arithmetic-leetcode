@@ -16,7 +16,8 @@ public class SubSets {
 
 //        return recursive(nums, nums.length - 1);
         LinkedList<Integer> track = new LinkedList<>();
-        return backtrack(nums, 0, track);
+        backtrack(nums, 0, track);
+        return res;
     }
 
     private static List<List<Integer>> recursive(int[] nums, int length) {
@@ -40,14 +41,13 @@ public class SubSets {
 
     }
 
-    private static List<List<Integer>> backtrack(int[] nums, int start, LinkedList<Integer> track) {
+    private static void backtrack(int[] nums, int start, LinkedList<Integer> track) {
         res.add(new LinkedList<>(track));
         for (int i = start; i < nums.length; i++) {
-            track.add(i);
+            track.add(nums[i]);
             backtrack(nums, start + 1, track);
             track.removeLast();
         }
-        return res;
     }
 }
 

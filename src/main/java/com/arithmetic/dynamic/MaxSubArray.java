@@ -16,10 +16,10 @@ public class MaxSubArray {
         int[] dp = new int[n];
         dp[0] = nums[0];
         for (int i = 1; i < n; i++) {
-            dp[i] = Math.max(dp[i], dp[i-1] + dp[i]);
+            dp[i] = Math.max(nums[i], dp[i-1] + nums[i]);
         }
 
-        int res = 0;
+        int res = Integer.MIN_VALUE;
         for (int num : dp) {
             res = Math.max(res, num);
         }

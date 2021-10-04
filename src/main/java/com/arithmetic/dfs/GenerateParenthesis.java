@@ -24,13 +24,13 @@ public class GenerateParenthesis {
     }
 
     void backtrack(int left, int right, StringBuilder track) {
-        if (left < right) {
+        if (left > right) {
             return;
         }
-        if (left < 0 || right < 0) {
+        if (left < 0) {
             return;
         }
-        if (right == 0 && left == 0) {
+        if (right == 0) {
             res.add(track.toString());
             return;
         }

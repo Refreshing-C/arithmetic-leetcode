@@ -1,7 +1,5 @@
 package com.arithmetic.listnode;
 
-import java.util.List;
-
 /**
  * author: 19045752
  * create: 2021/4/27

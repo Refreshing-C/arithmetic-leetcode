@@ -33,6 +33,7 @@ public class ThreeSum {
     }
 
     private List<List<Integer>> twoSum(int[] nums, int start, int target) {
+        List<List<Integer>> twoSumRes = new ArrayList<>();
         int low = start;
         int high = nums.length - 1;
         while (low < high) {
@@ -51,7 +52,7 @@ public class ThreeSum {
                 List<Integer> list = new ArrayList<>();
                 list.add(left);
                 list.add(right);
-                res.add(list);
+                twoSumRes.add(list);
                 while (low < high && nums[low] == left) {
                     low++;
                 }
@@ -60,6 +61,6 @@ public class ThreeSum {
                 }
             }
         }
-        return res;
+        return twoSumRes;
     }
 }
