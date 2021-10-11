@@ -11,7 +11,7 @@ public class FindTargetSumWays {
 
     static int result = 0;
 
-    public static int findTargetSumWays(int[] nums, int target) {
+    public int findTargetSumWays(int[] nums, int target) {
         if (nums.length == 0) {
             return 0;
         }
@@ -19,7 +19,7 @@ public class FindTargetSumWays {
         return result;
     }
 
-    public static void backtrack(int[] nums, int i, int rest) {
+    public void backtrack(int[] nums, int i, int rest) {
         // 用完所有数组元素
         if (i == nums.length) {
             // 凑够target
@@ -41,10 +41,5 @@ public class FindTargetSumWays {
         backtrack(nums, i + 1, rest);
         // 撤销选择
         rest += nums[i];
-    }
-
-    public static void main(String[] args) {
-        int[] nums = new int[]{1, 1, 1, 1, 1};
-        findTargetSumWays(nums, 3);
     }
 }

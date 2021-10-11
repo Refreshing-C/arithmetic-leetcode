@@ -25,6 +25,5 @@ public class LowestCommonAncestor {
             return null;
         }
         return left == null ? right : left;
-
     }
 }

@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * author: Administrator
  * create: 2021/5/20 0020
- * description:
+ * description: N皇后
  */
 public class SolveNQueens {
     List<List<String>> res = new ArrayList<>();

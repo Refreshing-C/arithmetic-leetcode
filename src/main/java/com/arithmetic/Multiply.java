@@ -39,4 +39,37 @@ public class Multiply {
         return str.toString();
     }
 
+    public static String addStrings(String num1, String num2) {
+        int m = num1.length() - 1;
+        int n = num2.length() - 1;
+        int len = Math.max(m, n) + 2;
+        int[] res = new int[len];
+        int add = 0;
+
+        while(m >= 0 || n >= 0 || add != 0) {
+            int x = m >= 0 ? num1.charAt(m) - '0' : 0;
+            int y = n >= 0 ? num2.charAt(n) - '0' : 0;
+            int ans = x + y + add;
+            res[--len] = ans % 10;
+            add = ans / 10;
+            m--;
+            n--;
+        }
+
+        int i = res[0] == 0 ? 1 : 0;
+
+        StringBuilder str = new StringBuilder();
+        for (; i < res.length; i++) {
+            str.append(res[i]);
+        }
+        return str.toString();
+    }
+
+    public static void main(String[] args) {
+        String num1 = "123";
+        String num2 = "12";
+
+        addStrings(num1, num2);
+    }
+
 }

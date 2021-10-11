@@ -9,10 +9,10 @@ import java.util.List;
  * description: 输入两个数字n k输出[1, n]中k个数字的所有组合
  * method: 使用回溯算法进行穷举
  */
-public class combine {
+public class Combine {
     List<List<Integer>> res = new LinkedList<>();
 
-    List<List<Integer>> combine(int n, int k) {
+    public List<List<Integer>> combine(int n, int k) {
         // 记录路径
         LinkedList<Integer> track = new LinkedList<>();
         backtrack(n, k, 1, track);

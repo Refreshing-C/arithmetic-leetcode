@@ -19,11 +19,7 @@ public class MaxCountNum {
 
         Map<String, Integer> keyValue = new HashMap<>(arr.length);
         for (String s : arr) {
-            if (keyValue.containsKey(s)) {
-                keyValue.put(s, keyValue.get(s) + 1);
-            } else {
-                keyValue.put(s, 1);
-            }
+            keyValue.put(s, keyValue.getOrDefault(s, 0) + 1);
         }
 
         int maxCount = 0;

@@ -21,7 +21,8 @@ public class ConstructMaximumBinaryTree {
         }
 
         // 找到数组中的最大值及下标
-        int index = -1, maxValue = Integer.MIN_VALUE;
+        int index = -1;
+        int maxValue = Integer.MIN_VALUE;
         for (int i = left; i <= right; i++) {
             if (nums[i] >= maxValue) {
                 index = i;

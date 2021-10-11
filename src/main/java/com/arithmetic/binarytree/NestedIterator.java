@@ -10,7 +10,7 @@ import java.util.List;
  * description:
  */
 public class NestedIterator implements Iterator<Integer> {
-    private LinkedList<NestedInteger> list;
+    private final LinkedList<NestedInteger> list;
 
     public NestedIterator(List<NestedInteger> nestedList) {
         list = new LinkedList<>(nestedList);
