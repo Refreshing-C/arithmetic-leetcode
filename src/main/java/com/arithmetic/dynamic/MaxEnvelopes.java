@@ -1,7 +1,6 @@
 package com.arithmetic.dynamic;
 
 import java.util.Arrays;
-import java.util.Comparator;
 
 /**
  * author: Administrator
