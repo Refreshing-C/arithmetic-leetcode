@@ -50,6 +50,7 @@ public class MaxPublicSubstring {
      * 寻找终止条件 决策到了不相等的结果
      *
      * 使用二维数组来表示a字符串和b字符串，a和b相等的位置均可以作为起点，从起点开始寻找最远距离
+     * dp[i][j]表示以下标i结尾的字符串a和以下标j结尾的字符串b的最长公共子串的长度为dp[i][j]
      */
 
     private static void getMaxPublicSubString2(String a, String b) {

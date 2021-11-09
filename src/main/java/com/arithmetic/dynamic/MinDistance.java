@@ -36,7 +36,7 @@ public class MinDistance {
         return dp[m][n];
     }
 
-    public int min(int a, int b, int c) {
+    private int min(int a, int b, int c) {
         return Math.min(Math.min(a, b), c);
     }
 }

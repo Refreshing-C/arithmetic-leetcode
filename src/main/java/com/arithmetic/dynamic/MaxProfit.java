@@ -36,7 +36,6 @@ public class MaxProfit {
     HashMap<Integer, Integer> memo = new HashMap<>();
 
     public int maxProfitMulti(int[] prices) {
-        int n = prices.length;
         return dp(0, prices);
     }
 
