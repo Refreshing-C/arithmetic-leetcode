@@ -1,4 +1,4 @@
-package com.arithmetic;
+package com.arithmetic.interval;
 
 import java.util.ArrayList;
 import java.util.List;
