@@ -8,9 +8,11 @@ package com.nowcoder.arithmetic;
 public class MoreThanHalfNumSolution {
 
     public static void main(String[] args) {
+        int[] nums = new int[]{1, 2, 4, 2, 3, 2, 2, 5, 6, 2, 3, 2, 2, 7};
+        System.out.println(moreThanHalfNumSolution(nums));
     }
 
-    public int MoreThanHalfNumSolution(int[] array) {
+    public static int moreThanHalfNumSolution(int[] array) {
         int temp = array[0];
         int count = 1;
         for (int i = 1; i < array.length; i++) {

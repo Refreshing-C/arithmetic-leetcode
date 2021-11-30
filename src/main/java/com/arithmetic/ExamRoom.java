@@ -6,7 +6,7 @@ import java.util.TreeSet;
 
 /**
  * author: Administrator
- * create: 2021/6/14 0014
+ * create: 2021/6/14
  * description: 给考生安排考试座位 考场里有N个座位，分别是[0...N-1]，每进来一个同学，要最大化他和最近其他人的距离，
  *          如果有多个这样的座位，安排他到索引最小的那个座位。
  */

@@ -4,7 +4,12 @@ package com.arithmetic;
  * @author 19045752
  * @create 2020/9/14
  * @description 寻找两个正序数组的中位数
- * method 使用插入排序的思想，每次将较小数组的元素插入到新数组中，轮流插入
+ * method 可以将问题转化为求两个正序数组第k小的元素，在两个数组均有序的情况下，可以使用二分查找的方法
+ *      比较两个数组第k/2的元素，若nums1[k/2-1] < nums2[k/2-1]，则nums1[0...k/2-2]都不可能是第k小的元素
+ *      若nums1[k/2-1] > nums2[k/2-1]，则nums2[0...k/2-2]都不可能是第k小的元素，
+ *      若nums1[k/2-1] = nums2[k/2-1]，则nums1[k/2-1]最多是第k-1小的元素
+ *      如果某个数组为空，说明该数组都不可能是第k小的元素，
+ *      当排除掉不可能的元素时，同时需要修改k的值，减去已经排除掉的元素个数，当k=1时，返回两个数组未排除的首元素最小值
  */
 public class FindMedianSortedArrays {
 
@@ -18,36 +23,49 @@ public class FindMedianSortedArrays {
         
     }
 
+    private static double findMedianSortedArrays(int[] nums1, int [] nums2) {
+        int length1 = nums1.length;
+        int length2 = nums2.length;
+        int totalLength = length1 + length2;
 
-    public static double findMedianSortedArrays(int[] nums1, int[] nums2) {
-        int[] arr = new int[(nums1.length + 1 + nums2.length) / 2];
-
-        // 使用插入排序算法的思想 充分利用有序数组的条件
-        // 每次将一个数组的值插入到另一个数组中 插入下一个元素时从插入上一个元素的起始位置开始插入
-        if (nums1.length == 0) {
-            return nums2[nums2.length / 2];
+        if (totalLength % 2 == 0) {
+            return (findKthSmallest(nums1, nums2, totalLength / 2)
+                    + findKthSmallest(nums1, nums2, totalLength / 2 + 1)) / 2;
+        } else {
+            return findKthSmallest(nums1, nums2, totalLength / 2 + 1);
         }
+    }
 
-        if (nums2.length == 0) {
-            return nums1[nums1.length / 2];
-        }
+    private static double findKthSmallest(int[] nums1, int[] nums2, int k) {
+        int length1 = nums1.length;
+        int length2 = nums2.length;
 
-        int i = 0;
-        int a = 0;
-        int b = 0;
-        while (i < arr.length) {
+        int index1 = 0;
+        int index2 = 0;
 
-            while (a < nums1.length && i < arr.length && nums2[b] >= nums1[a]) {
-                arr[i] = nums1[a];
-                i++;
-                a++;
+        while (true) {
+            if (index1 == length1) {
+                return nums2[index2 + k - 1];
             }
-            while (b < nums2.length && i < arr.length && nums2[b] < nums1[a]) {
-                arr[i] = nums2[b];
-                i++;
-                b++;
+            if (index2 == length2) {
+                return nums1[index1 + k - 1];
+            }
+
+            if(k == 1) {
+                return Math.min(nums1[index1], nums2[index2]);
+            }
+
+            int halfK = k / 2;
+            int tmpIndex1 = Math.min(index1 + halfK, length1) - 1;
+            int tmpIndex2 = Math.min(index2 + halfK, length2) - 1;
+
+            if (nums1[tmpIndex1] <= nums2[tmpIndex2]) {
+                k -= (tmpIndex1 - index1 + 1);
+                index1 = tmpIndex1 + 1;
+            } else {
+                k -= (tmpIndex2 - index2 + 1);
+                index2 = tmpIndex2 + 1;
             }
         }
-        return arr[arr.length - 1];
     }
 }
