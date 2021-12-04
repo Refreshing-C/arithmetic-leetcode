@@ -22,12 +22,12 @@ public class MyJDBC {
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/test", "root", "000000");
-			String sql = "insert into student(name, age, birthday) values(?,?,?)";
+			conn = DriverManager.getConnection("jdbc:mysql://110.40.137.198:3306/test", "root", "123456");
+			String sql = "insert into t_user(id, name, age) values(?,?,?)";
 			ps = conn.prepareStatement(sql);
-			ps.setString(1, student.getName());
-			ps.setInt(2, student.getAge());
-			ps.setString(3, student.getBirthday());
+			ps.setInt(1, 3);
+			ps.setString(2, student.getName());
+			ps.setInt(3, student.getAge());
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
