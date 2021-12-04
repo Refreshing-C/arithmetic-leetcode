@@ -1,4 +1,4 @@
-package com.arithmetic.stack;
+package com.arithmetic.slidewindow;
 
 import java.util.Stack;
 
