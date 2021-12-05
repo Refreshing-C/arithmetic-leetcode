@@ -16,7 +16,6 @@ public class ThreeSum {
     public List<List<Integer>> threeSums(int[] nums, int target) {
         Arrays.sort(nums);
 
-
         int n = nums.length;
         for (int i = 0; i < n; i++) {
             List<List<Integer>> list = twoSum(nums, i + 1, target - nums[i]);

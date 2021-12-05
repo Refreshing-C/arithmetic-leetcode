@@ -7,7 +7,8 @@ import java.util.Arrays;
  * create: 2021/6/6 0006
  * description: 给定一个无序的整数数组，找到其中最长上升子序列的长度
  * method: 使用动态规划 dp数组保存当前字符在数组中最长上升子序列的长度
- *      dp[i]表示以nums[i]结尾的子数组的最长上升子序列长度为dp[i]
+ *      dp[i]表示以nums[i]结尾的子数组的最长上升子序列长度为dp[i]，
+ *      就需要遍历i以前元素，取比nums[i]小的最大的一个上升子数组长度，加1作为dp[i]
  */
 public class LengthOfLIS {
     public int lengthOfLIS(int[] nums) {
@@ -18,7 +19,7 @@ public class LengthOfLIS {
         for (int i = 0; i < length; i++) {
             for (int j = 0; j < i; j++) {
                 if (nums[j] < nums[i]) {
-                    dp[i] = dp[j] + 1;
+                    dp[i] = Math.max(dp[i], dp[j] + 1);
                 }
             }
         }

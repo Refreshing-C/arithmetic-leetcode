@@ -1,6 +1,10 @@
 package com.arithmetic;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author 19045752
@@ -17,7 +21,7 @@ public class TwoSum {
             System.out.println(temp[0] + " and " + temp[1]);
         }
 
-        //        int[] twoSums = getTwoSums(arr, target);
+//        int[] twoSums = getTwoSums(arr, target);
 //        System.out.println(twoSums[0] + " and " + twoSums[1]);
 
 
@@ -41,6 +45,7 @@ public class TwoSum {
 
     /**
      * 在数组有序的情况下，使用双指针求解
+     *
      * @param nums
      * @param target
      * @return
