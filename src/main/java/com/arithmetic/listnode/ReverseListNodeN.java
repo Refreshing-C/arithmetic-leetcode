@@ -15,10 +15,8 @@ public class ReverseListNodeN {
         ListNode prev = null;
         ListNode successor = null;
         ListNode curr = head;
-        int count = 0;
         while (curr != null) {
-            count++;
-            if (count <= n) {
+            if (n-- > 0) {
                 ListNode next = curr.next;
                 successor = next;
                 curr.next = prev;

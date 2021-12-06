@@ -14,8 +14,8 @@ public class IsPalindromeListNode {
             return true;
         }
 
-        ListNode fast, slow;
-        fast = slow = head;
+        ListNode fast = head;
+        ListNode slow = head;
         while (fast != null && fast.next != null) {
             fast = fast.next.next;
             slow = slow.next;

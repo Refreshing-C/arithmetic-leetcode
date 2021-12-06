@@ -25,23 +25,22 @@ public class ListNodeApp {
 
         ReorderList.reorderList(a);
 
-        printListNodeReverse(a);
+        head = ReverseListNodeN.reverseN(a, 3);
 
-        /*head = ReverseListNodeN.reverseN2(a, 0);
-//        ListNode head = reverseBetween(a, 1, 1);
+//        head = ReverseListBetween.reverseBetween(a, 1, 1);
+
+//        printListNodeReverse(a);
 
         while (head != null) {
             System.out.println(head.val);
             head = head.next;
-        }*/
-
-//        printListNodeReverse(a);
+        }
     }
 
     /**
      * 倒序打印单链表中的元素值
      *
-     * @param head
+     * @param head 头节点
      */
     public static void printListNodeReverse(ListNode head) {
         if (head == null) {
