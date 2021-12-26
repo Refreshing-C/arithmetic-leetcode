@@ -7,7 +7,7 @@ package com.arithmetic.listnode;
  */
 public class ListNodeApp {
     public static void main(String[] args) {
-        //测试,建立6个listnode结点对应的val依次为1、2、3、4、5、6
+        //测试,建立6个ListNode结点对应的val依次为1、2、3、4、5、6
         //最终让3到5的位置的链表发生反转，并重新打印出反转后的元素
         ListNode a = new ListNode(1);
         ListNode b = new ListNode(2);
@@ -20,7 +20,6 @@ public class ListNodeApp {
         c.next = d;
         d.next = e;
         e.next = f;
-
         ListNode head = null;
 
         ReorderList.reorderList(a);

@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class MergeIntervals {
     public int[][] merge(int[][] intervals) {
-        Arrays.sort(intervals, Comparator.comparingInt(a -> a[0]));
+        Arrays.sort(intervals, Comparator.comparingInt(o -> o[0]));
         if (intervals.length == 0) {
             return new int[0][];
         }
