@@ -9,7 +9,7 @@ import java.util.Stack;
  */
 public class ReverseStr {
     public static void main(String[] args) {
-        String str = "This is a good example";
+        String str = " This is a good example ";
         System.out.println(reverseStr(str));
     }
 

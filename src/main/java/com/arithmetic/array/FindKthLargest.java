@@ -13,7 +13,7 @@ public class FindKthLargest {
     public int findKthLargest(int[] nums, int k) {
         PriorityQueue<Integer> minHeap = new PriorityQueue<>();
         for (int num : nums) {
-            minHeap.offer(num);
+            minHeap.add(num);
             // 堆中元素超过k个时，删除堆顶元素
             if (minHeap.size() > k) {
                 minHeap.poll();

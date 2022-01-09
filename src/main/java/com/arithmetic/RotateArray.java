@@ -1,14 +1,15 @@
 package com.arithmetic;
 
 /**
- * @author 19045752
- * @create 2020/7/20
- * @description
+ * author 19045752
+ * create 2020/7/20
+ * description 旋转有序数组，判断某个数是否在里面
+ * method 二分查找
  */
 public class RotateArray {
 
     /**
-     * 旋转有序数组，判断某个数是否在里面
+     *
      */
 
     public static void main(String[] args) {
