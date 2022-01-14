@@ -1,14 +1,13 @@
 package com.nowcoder.javabase;
 public class GetSum{
 	private static int sum = 0;
-	private static Object lock = new Object();
+	private static final Object lock = new Object();
 	
 	public static void main(String[] args) throws Exception {
-		GetSum gs = new GetSum();
-		ThreadTest t1 = gs.new ThreadTest(0, 25);
-		ThreadTest t2 = gs.new ThreadTest(26, 50);
-		ThreadTest t3 = gs.new ThreadTest(51, 75);
-		ThreadTest t4 = gs.new ThreadTest(76, 100);
+		ThreadTest t1 = new ThreadTest(0, 25);
+		ThreadTest t2 = new ThreadTest(26, 50);
+		ThreadTest t3 = new ThreadTest(51, 75);
+		ThreadTest t4 = new ThreadTest(76, 100);
 		t1.start();
 		t2.start();
 		t3.start();
@@ -20,20 +19,20 @@ public class GetSum{
 		System.out.println(sum);
 	 
 	}
-	
-	class ThreadTest extends Thread{
-		private int begin;
-		private int end;
+
+	static class ThreadTest extends Thread{
+		private final int begin;
+		private final int end;
 		public ThreadTest(int begin, int end) {
 			this.begin = begin;
 			this.end = end;
 		}
-		
+
 		@Override
 		public void run() {
 			synchronized(lock){
 				for(int i = begin; i <= end; i++) {
-					GetSum.this.sum += i;
+					sum += i;
 				}
 			}
 		}

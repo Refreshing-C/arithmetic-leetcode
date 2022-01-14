@@ -29,7 +29,9 @@ public class TreeNodeApp {
 
         root = ConstructMaximumBinaryTree.constructMaximumBinaryTree(nums);
 
-        preorderTraversal(root);
+//        preorderTraversal(root);
+
+        BinaryTreeBreadthTraversal.rightSideView(root);
     }
 
     /**

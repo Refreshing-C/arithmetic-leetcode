@@ -8,10 +8,6 @@ package com.arithmetic;
  */
 public class RotateArray {
 
-    /**
-     *
-     */
-
     public static void main(String[] args) {
 
         int[] arr = new int[]{4, 5, 6, 7, 9, 2, 3};

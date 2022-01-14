@@ -2,6 +2,9 @@ package com.nowcoder.javabase;
 
 import java.util.concurrent.CountDownLatch;
 
+/**
+ * 使用4个子线程求出1到100的和,且每个子线程只能计算25个数,主线程必须等待子线程
+ */
 public class FourThread {
 
     static int sum11 = 0;
@@ -12,9 +15,7 @@ public class FourThread {
 
 
     public static void main(String[] args) {
-/**
- * 使用4个子线程求出1到100的和,且每个子线程只能计算25个数,主线程必须等待子线程
- */
+
         CountDownLatch latch = new CountDownLatch(4);
         new Thread(() -> {
             int sum1 = 0;

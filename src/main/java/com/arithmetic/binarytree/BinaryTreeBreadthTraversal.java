@@ -1,9 +1,7 @@
 package com.arithmetic.binarytree;
 
-
-import com.arithmetic.listnode.ListNode;
-
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -35,6 +33,41 @@ public class BinaryTreeBreadthTraversal {
             }
             res.add(list);
         }
+        return res;
+    }
+
+    public static List<Integer> rightSideView(TreeNode root) {
+        List<Integer> res = new ArrayList<>();
+        HashMap<Integer, Integer> levelToNode = new HashMap<>();
+        LinkedList<TreeNode> queue = new LinkedList<>();
+
+        if(root == null) {
+            return res;
+        }
+
+        queue.add(root);
+        int level = 0;
+
+        while(!queue.isEmpty()) {
+            level++;
+            int size = queue.size();
+            for(int i = 1; i <= size; i++) {
+                TreeNode current = queue.pop();
+                levelToNode.put(level, current.val);
+                if(current.left != null) {
+                    queue.add(current.left);
+                }
+                if(current.right != null) {
+                    queue.add(current.right);
+                }
+            }
+
+        }
+
+        for(int i = 1; i <= level; i++) {
+            res.add(levelToNode.get(i));
+        }
+
         return res;
     }
 }
