@@ -9,7 +9,7 @@ package com.arithmetic.dfs;
  */
 public class FindTargetSumWays {
 
-    static int result = 0;
+    int result = 0;
 
     public int findTargetSumWays(int[] nums, int target) {
         if (nums.length == 0) {
