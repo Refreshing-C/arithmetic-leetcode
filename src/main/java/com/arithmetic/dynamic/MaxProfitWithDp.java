@@ -97,7 +97,6 @@ public class MaxProfitWithDp {
      * @param maxK
      * @return
      */
-    HashMap<Integer, Integer> memo2 = new HashMap<>();
     public int maxProfitInK(int[] prices, int maxK) {
         int n = prices.length;
         if (maxK > n / 2) {

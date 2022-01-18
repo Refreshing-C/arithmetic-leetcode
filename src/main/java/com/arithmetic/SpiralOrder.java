@@ -7,6 +7,7 @@ import java.util.List;
  * author: Administrator
  * create: 2022-01-13 22:43
  * description: 给你一个 m 行 n 列的矩阵 matrix ，请按照 顺时针螺旋顺序 ，返回矩阵中的所有元素
+ * method: 采用模拟的方式
  */
 public class SpiralOrder {
     public List<Integer> spiralOrder(int[][] matrix) {

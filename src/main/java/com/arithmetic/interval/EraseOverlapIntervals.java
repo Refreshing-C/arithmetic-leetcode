@@ -1,4 +1,4 @@
-package com.arithmetic.dynamic;
+package com.arithmetic.interval;
 
 import java.util.Arrays;
 import java.util.Comparator;
