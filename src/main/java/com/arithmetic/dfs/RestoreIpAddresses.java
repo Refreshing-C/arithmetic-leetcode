@@ -3,7 +3,6 @@ package com.arithmetic.dfs;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * author: Administrator
@@ -21,12 +20,12 @@ public class RestoreIpAddresses {
     }
 
     private static void dfs(LinkedList<Integer> track, String s, int startIndex) {
-        if(track.size() == 4) {
-            if(startIndex == s.length()) {
+        if (track.size() == 4) {
+            if (startIndex == s.length()) {
                 StringBuilder segments = new StringBuilder();
-                for(int i = 0; i < track.size(); i++) {
+                for (int i = 0; i < track.size(); i++) {
                     segments.append(track.get(i));
-                    if(i != track.size() - 1) {
+                    if (i != track.size() - 1) {
                         segments.append(".");
                     }
                 }
@@ -36,20 +35,20 @@ public class RestoreIpAddresses {
         }
 
         // 如果用完了所有字符直接返回
-        if(startIndex == s.length()) {
+        if (startIndex == s.length()) {
             return;
         }
 
-        if(s.charAt(startIndex) == '0') {
+        if (s.charAt(startIndex) == '0') {
             track.add(0);
             dfs(track, s, startIndex + 1);
             track.removeLast();
         }
 
         int addr = 0;
-        for(int j = startIndex; j < s.length(); j++) {
+        for (int j = startIndex; j < s.length(); j++) {
             addr = addr * 10 + (s.charAt(j) - '0');
-            if(addr > 0 && addr <= 255) {
+            if (addr > 0 && addr <= 255) {
                 track.add(addr);
                 dfs(track, s, j + 1);
                 track.removeLast();

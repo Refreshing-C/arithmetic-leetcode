@@ -29,6 +29,8 @@ public class ExamRoom {
                 return dist1 - dist2;
             }
         });
+
+        addInterval(new int[]{-1, n});
     }
 
     /**
