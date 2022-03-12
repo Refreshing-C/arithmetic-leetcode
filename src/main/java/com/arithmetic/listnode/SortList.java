@@ -10,7 +10,6 @@ public class SortList {
     public ListNode sortList(ListNode head) {
         return sort(head, null);
     }
-
     private ListNode sort(ListNode head, ListNode tail) {
         if (head == null) {
             return null;

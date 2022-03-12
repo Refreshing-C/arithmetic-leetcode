@@ -20,7 +20,7 @@ public class BinaryTreeBreadthTraversal {
         queue.offer(root);
         while (!queue.isEmpty()) {
             List<Integer> list = new ArrayList<>();
-            for (int i = 1; i < queue.size(); i++) {
+            for (int i = 0; i < queue.size(); i++) {
                 TreeNode current = queue.poll();
                 list.add(current.val);
 

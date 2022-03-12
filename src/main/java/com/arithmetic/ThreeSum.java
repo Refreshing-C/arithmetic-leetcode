@@ -21,7 +21,7 @@ public class ThreeSum {
             List<List<Integer>> list = twoSum(nums, i + 1, target - nums[i]);
             for (List<Integer> inner : list) {
                 inner.add(nums[i]);
-                list.add(inner);
+                res.add(inner);
             }
             // 跳过所有重复元素
             while (i < n - 1 && nums[i] == nums[i + 1]) {

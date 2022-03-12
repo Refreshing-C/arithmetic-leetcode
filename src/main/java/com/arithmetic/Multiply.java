@@ -1,5 +1,7 @@
 package com.arithmetic;
 
+import java.util.Random;
+
 /**
  * author: 19045752
  * create: 2021/6/13
@@ -69,7 +71,12 @@ public class Multiply {
         String num1 = "123";
         String num2 = "12";
 
-        addStrings(num1, num2);
+//        addStrings(num1, num2);
+
+        Random r = new Random(10);
+        for(int i = 0; i < 10; i++) {
+            System.out.println(r.nextDouble());
+        }
     }
 
 }

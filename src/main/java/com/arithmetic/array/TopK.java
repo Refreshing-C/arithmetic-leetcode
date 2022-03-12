@@ -1,5 +1,7 @@
 package com.arithmetic.array;
 
+import java.util.concurrent.locks.ReentrantLock;
+
 /**
  * author: Administrator
  * create: 2022-01-10 18:19
@@ -8,7 +10,6 @@ package com.arithmetic.array;
  *      如果比堆顶元素大就进行替换，然后调整堆
  */
 public class TopK {
-
     public int[] topK(int[] nums, int k) {
         int[] minHeap = new int[k];
         System.arraycopy(nums, 0, minHeap, 0, k);
